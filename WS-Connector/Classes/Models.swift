@@ -13,7 +13,6 @@ struct ParametrosRequest <A>  {
     var bodys: Any
     var contexts: String
     let parses: (NSData) -> A?
-    
 }
 
 struct SimpleRequest <A> {
