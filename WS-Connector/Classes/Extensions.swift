@@ -133,26 +133,22 @@ extension String {
         return String(data: data, encoding: .utf8)
     }
     
-    
-    
-    
     func hexadecimal() -> Data? {
         var data = Data(capacity: characters.count / 2)
-        
         let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
         regex.enumerateMatches(in: self, options: [], range: NSMakeRange(0, characters.count)) { match, flags, stop in
             let byteString = (self as NSString).substring(with: match!.range)
             var num = UInt8(byteString, radix: 16)!
             data.append(&num, count: 1)
         }
-        
         guard data.count > 0 else {
             return nil
         }
-        
         return data
     }
-    //para SLCAlertView
+
+    
+    
     func heightWithConstrainedWidth(width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: CGFloat.greatestFiniteMagnitude)
         
@@ -197,7 +193,7 @@ extension String {
     
     
 }
-//para SLCAlertView
+
 
 extension UInt {
     
@@ -411,14 +407,8 @@ extension UIImageView {
                 }.resume()
         }
     }
-    
-    
-    
-    
-    
 }
 extension UIColor {
-    
     convenience init(hex:Int, alpha:CGFloat = 1.0) {
         self.init(
             red:   CGFloat((hex & 0xFF0000) >> 16) / 255.0,
@@ -427,25 +417,19 @@ extension UIColor {
             alpha: alpha
         )
     }
-    
 }
 
 extension UIView {
-    
     func rotate(toValue: CGFloat, duration: CFTimeInterval = 0.2) {
         let animation = CABasicAnimation(keyPath: "transform.rotation")
-        
         animation.toValue = toValue
         animation.duration = duration
         animation.isRemovedOnCompletion = false
         animation.fillMode = kCAFillModeForwards
         self.layer.add(animation, forKey: nil)
     }
-    
 }
 extension Data {
-    
-    
     // GET JSONFILE
     static func getJsonFile(fileName: String) -> Any? {
         if let url = Bundle.main.url(forResource: fileName, withExtension: "json") {
@@ -483,7 +467,6 @@ extension Data {
         }
         return nil
     }
-    
 }
 
 extension NSData {
