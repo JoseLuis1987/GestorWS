@@ -1,0 +1,6 @@
+framework module WS_Connector {
+  umbrella header "WS-Connector-umbrella.h"
+
+  export *
+  module * { export * }
+}

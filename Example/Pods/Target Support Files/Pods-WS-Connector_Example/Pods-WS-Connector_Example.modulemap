@@ -1,0 +1,6 @@
+framework module Pods_WS_Connector_Example {
+  umbrella header "Pods-WS-Connector_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
